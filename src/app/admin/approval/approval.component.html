@@ -1,0 +1,9 @@
+<body>
+<h1 style="text-align: center;">Approval</h1>
+<h4>Email which needs to be approved:-</h4>
+<div *ngFor="let info of info; let i = index">
+<div class="alert alert-success" >{{info.email}}</div>
+<button class="btn btn-success" (click) = "approve()">Approve</button>
+<button class="btn btn-danger"(click)="decline(i)">Decline</button>
+</div>
+</body>

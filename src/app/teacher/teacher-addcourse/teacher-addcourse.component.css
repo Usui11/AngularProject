@@ -1,0 +1,18 @@
+.input{
+    width: 30em;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid tomato;
+}
+.addcourse{
+    display: flex;
+    justify-content: center;
+
+}
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    background-color: rgb(63, 65, 66);
+    color: aliceblue;
+}

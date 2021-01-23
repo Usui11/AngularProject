@@ -1,0 +1,95 @@
+<body>
+ <div class=" logo d-flex justify-content-center">
+    <img src="https://moradoconsulting.ro/wp-content/uploads/2018/04/e-learning.jpg" alt="logo"
+    class="img-responsive"
+    style="max-width: 200px;
+    border-radius: 50%
+    "></div>
+<hr>
+<div class="background">
+<form style="width: 300px; margin: auto;" [formGroup] = "loginForm" *ngIf="isLoggedin && !isLoading" (ngSubmit) = "onloggedin()">
+ <h1 class="heading">LogIn</h1>
+ <div class="form-group"> <label for="email">Email</label>
+   <input type="email"
+    name="emal"
+     id="email"
+      class="form-control"
+      formControlName = "email"
+      ></div>
+ <div class="form-group">
+ <label for="password">Password</label>
+   <input type="password" 
+   name="password"
+    id="passsword"
+     class="form-control"
+    formControlName = "password"
+     ></div>
+ 
+
+ <!-- <input type="checkbox" id="accept-terms" >&nbsp; -->
+ <!-- <label for="accept-terms">Accept Terms and Conditions</label> -->
+<div class="form-group d-flex justify-content-center">
+ <button class="btn btn-success d-flex justify-content-center" 
+ type="submit"
+ >Log In</button>
+ <button class="btn d-flex justify-content-center" 
+  (click)="signup()" routerLink='/signup'
+  style="color:white;">Sign Up</button>
+ 
+</div>
+<div *ngIf="alertError">
+  <button class="alert alert-danger loginbtn " >{{errorMessage}}</button>
+  </div>
+</form>
+<div *ngIf="isLoading" style="text-align: center;">
+<app-loading-spin></app-loading-spin>
+</div>
+
+<form
+style="width: 300px; margin: auto;" 
+*ngIf = "!isLoggedin && !isLoading"
+[formGroup] = "signupForm"
+(ngSubmit) = "onsignup()"
+
+>
+
+
+  <h1 class="heading">Sign Up</h1>
+  <div class="form-group"> <label for="email">Email</label>
+    <input type="email" name="emal" id="email" class="form-control"
+    formControlName="email" 
+     ></div>
+ 
+  <div class="form-group">
+  <label for="password">Password</label>
+    <input type="password" name="password" id="passsword" class="form-control" 
+    formControlName="password"
+   ></div>
+  
+  <!-- <input type="checkbox" id="accept-terms" name="accept-terms" ><label for="accept-terms">Accept Terms and Conditions</label> -->
+  
+<div class="form-group d-flex justify-content-center">
+  <button class="btn btn-primary d-flex justify-content-center" 
+  routerLink="/login"
+  type="submit"
+  >Sign Up</button>
+  <button class="btn d-flex justify-content-center" 
+   (click)="signup()" routerLink='/signup'
+   style="color:white;">Log In</button>
+</div>
+
+<div *ngIf="alertMessage">
+<button class="alert alert-success loginbtn ">Please wait for admin to confirm your credintials</button>
+</div>
+<div *ngIf="alertError">
+  <button class="alert alert-danger loginbtn " >{{errorMessage}}</button>
+  </div>
+  <div *ngIf="note" class="alertmsg"><div class="alert alert-success">
+    Note: Please use @admin.edu.bt, @teacher.edu.bt and @student.edu.bt address for admin,
+    teacher and student respectively.
+  </div>
+   
+  </div>
+</form>
+</div>
+</body>

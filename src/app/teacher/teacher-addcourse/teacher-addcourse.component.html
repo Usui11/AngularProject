@@ -1,0 +1,81 @@
+<body>
+<h1  style="text-align: center;">ADD COURSE</h1><div class="container addcourse">
+<form (ngSubmit)="newcourseadded()" [formGroup]="addcourseform">
+    <div>
+<div>
+    <div >
+      <div class="form-group" class="input">
+        <label for="topic">Course Title :</label>
+        <input type="text" 
+        class="form-control"
+         name="name" 
+         formControlName = "name"
+         ><span *ngIf="!addcourseform.get('name').valid && addcourseform.get('name').touched" 
+         class="help-block" style="color: red;">Please fill the valid input</span>
+      </div>
+        
+    </div>
+</div>
+
+<div >
+    <div >
+        <div class="form-group" class="input">
+            <label for="imglink">Image Link :</label>
+        <input type="text" 
+        class="form-control" 
+        name="imglink"
+    
+         formControlName = "imgpath"><span *ngIf="!addcourseform.get('imgpath').valid && addcourseform.get('imgpath').touched" 
+         class="help-block" style="color: red;">Please fill the valid input</span>
+        </div>
+        
+    </div>
+</div>
+
+<div >
+    <div>
+<div class="input" >
+    <label>Course Description :</label>
+        <textarea name="description" 
+        class="form-control" 
+        style="height: 10em;"
+         formControlName = "description"
+         >add here</textarea>
+    </div>
+   </div> 
+    
+</div>
+
+<div >
+    <div class="form-group" class="input form-group" >
+    <div class="col-xs-6">
+
+    <label>due Date :</label>
+        <input type="date" 
+        class="form-control"
+         
+         formControlName = "date">
+         <span *ngIf="addcourseform.get('date').invalid && addcourseform.get('date').touched" 
+         class="help-block" style="color: red;">Please fill the valid input</span>
+   </div> 
+   <div class="">
+
+    <label>Course Cost :</label>
+        <input type="number" 
+        class="form-control" 
+        formControlName = "coursecost">
+        <span *ngIf="!addcourseform.get('coursecost').valid && addcourseform.get('coursecost').touched" 
+         class="help-block" style="color: red;">Please fill the valid input</span>
+   </div> 
+</div>
+</div>
+<div>
+    <div class="form-group input">
+        <button type="submit" class="form-control btn btn-success"  >SUBMIT</button>
+    </div>
+    
+</div>
+</div>
+</form>
+</div>
+</body>

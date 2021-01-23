@@ -1,0 +1,20 @@
+<div>
+    <h3><span class="badge" style="background-color: black; color: white;">Course Details</span></h3>
+    <h1  style="cursor: pointer;">{{name}}</h1>
+    <hr>
+    <div>
+        <img [src]="imgpath"
+        class="img-responsive"
+        style="max-width: 600px;"
+        >
+    </div>
+    <hr>
+    <p>{{description}}</p>
+    <hr>
+    <p >Due date : {{dat }}</p>
+    <hr><p>Course Cost : ${{cost}}</p>
+    <div *ngIf="enrolled"><button class="btn btn-primary" (click)="enroll()">Enroll</button></div>
+    <div *ngIf="!enrolled"><button class="btn btn-success">Enrolled</button></div>
+    
+
+</div>

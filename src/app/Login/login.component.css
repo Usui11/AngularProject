@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    color: royalblue;
+}
+.loginbtn{
+    height: 7em;
+    width: 20em;
+    box-shadow: none;
+    color: black;
+    border: none;
+    
+}
+.confirmmsg{
+    padding-top: 15%;
+    background-color: lightgreen;
+    border-radius: 10px;
+}
+.errormsg{
+    padding-top: 15%;
+    background-color: rgb(230, 126, 126);
+    border-radius: 10px;
+}
+.background{
+    border-radius: 30px;
+    margin-left: 25%;
+    display: flex;
+    justify-content: center;
+    height: 20em;
+    width: 50%;
+    background-color: rgb(63, 65, 66);
+    
+    color: aliceblue;
+}
+input{
+    height: 40px;
+}
+.heading{
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color :white;;
+}
+.alertmsg{
+    padding-top: 15%;
+    margin-left: -50%;
+    width: 200%;
+    
+}

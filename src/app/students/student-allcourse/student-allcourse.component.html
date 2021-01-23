@@ -1,0 +1,36 @@
+<body>
+<h1 style="text-align: center;">ALL COURSES</h1>
+
+<hr>
+<div class="row justify-content-around">
+ <div class="col-xs-6" >
+     <a  
+     class="list-group-item form-group"
+     *ngFor="let c of course; let i = index"
+     routerLinkActive="active"
+     style="border: 1px solid rgb(81, 18, 228); border-radius: 10px;"
+     >
+     <div >
+         <h2 class="list-group-item-heading"><a >{{i+1}}.{{c.name | uppercase}}</a></h2>
+         
+     </div>
+     <span >
+      <img 
+      [src] = "c.imgpath"
+      class = "img-responsive"
+      style="max-width: 400px;"
+      >
+     </span>
+     <p>Due date : {{c.dat| date}}</p>
+     <p>Course Cost : ${{c.cost}}</p>
+     <button class="btn btn-success"><a [routerLink]="[i+1]" (click)="scrolltop()">Display</a></button>
+    
+     </a> 
+    
+ </div>
+ <div class='col-xs-6'><router-outlet></router-outlet></div>
+</div>
+</body>
+
+
+

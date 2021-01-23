@@ -24,11 +24,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/jquery/dist/jquery.min.js",
               "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
+            
             "production": {
               "fileReplacements": [
                 {
@@ -120,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "e-learning-app"
+  "defaultProject": "e-learning-app",
+  "cli": {
+    "analytics": "7b8a3fca-cd24-4cf7-b694-c4b3eeef586c"
+  }
 }

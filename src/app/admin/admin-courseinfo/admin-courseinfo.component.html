@@ -1,0 +1,9 @@
+<body>
+<h1 style="text-align: center;">Cost of each Course</h1><hr>
+<div style="display: flex; justify-content: center;">
+    <div>
+<div *ngFor="let c of course; let i= index">
+<div class="alert alert-success">{{c.name}} with the deadline of {{c.dat | date}} <span class="badge">{{c.cost}}</span></div>
+</div></div>
+</div>
+</body>

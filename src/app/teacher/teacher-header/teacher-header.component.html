@@ -1,0 +1,34 @@
+
+<nav class="navbar navbar-expand navbar-dark bg-dark stylenav">
+    <a href="#" class="nav-brand">e-LEARNING</a>
+    <div class="collapse navbar-collapse">
+     <ul class="navbar-nav ml-auto">
+    <li class="nav-item" >
+         <a routerLink="teacher-homepage" class="nav-link" routerLinkActive="active">Home</a>
+         </li>
+    <li class="nav-item" routerLinkActive="active" >
+         <a routerLink="teacher-all-course/1" class="nav-link" >All Courses</a>
+         </li>
+    <li class="nav-item" routerLinkActive="active">
+         <a routerLink="teacher-add-course" class="nav-link" >Add Courses</a>
+         </li>
+    <!-- <li class="nav-item" routerLinkActive="active">
+         <a routerLink="teacher-student-details" class="nav-link" >Student Details</a>
+         </li> -->
+         <li class="dropdown nav-item" routerLinkActive="active">
+         <a  class="dropdown-toggle nav-link" data-toggle="dropdown" role="button">Profile</a>
+              <ul class="dropdown-menu">
+                   <li class="dropdown-item" (click)="save()" ><a routerLink="./teacher-all-course/1">Save</a></li>
+                   <!-- <li class="dropdown-item" (click)="fetch()"><a routerLink="./teacher-all-course/1">Fetch</a></li> -->
+                   <!-- <li class="dropdown-item" ><a routerLink="personal-details">Personal</a></li> -->
+                   <li class="dropdown-item"><a (click)="logout()" style="cursor: pointer;">Log Out</a>
+               
+               </li>
+              </ul>
+         </li>
+         
+    </ul>
+    </div>
+   </nav>
+   
+  

@@ -1,0 +1,55 @@
+<div *ngIf="!edit">
+    <h3><span class="badge" style="background-color: black; color: white;">Course Details</span></h3>
+    <h1  style="cursor: pointer;">{{name | uppercase}}</h1>
+    <hr>
+    <div>
+        <img [src]="imgpath"
+        class="img-responsive"
+        style="max-width: 500px;"
+        >
+    </div>
+    <hr>
+    <p class="descrip">{{description}}</p>
+    <hr>
+    <p >Due date : {{dat|date}}</p>
+    <hr><p>Course Cost : ${{cost}}</p>
+    <button class="btn btn-success"(click) = onedit() routerLink="edit">Edit</button>
+</div>
+
+
+<div *ngIf="edit">
+  <button class="btn btn-primary" (click)="save()">Save</button> 
+  <button class="btn btn-danger" (click)="abort()">Cancel</button>
+  <hr>
+  <form class="justify-content-center" (ngSubmit)="save()" [formGroup]="editCourse">
+      <div class="form-group">
+          <label for="name">Title : </label>
+          <input type="text" 
+          name="name" 
+          class="form-control"
+          formControlName ="name">
+      </div>
+      <div class="form-group">
+        <label for="link">ImgLink : </label>
+        <input type="text" name="link" class="form-control"
+        formControlName ="imgpath">
+    </div>
+    <div class="form-group">
+        <label for="name">Description : </label>
+        <textarea class="form-control"
+        formControlName ="description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="date">Due Date : </label>
+        <input type="date" name="date" class="form-control"
+        formControlName ="date">
+    </div>
+    <div class="form-group">
+        <label for="cost">Course Cost : </label>
+        <input type="number" name="cost" class="form-control"
+        formControlName ="coursecost">
+    </div>
+  </form>
+
+</div>
+   
