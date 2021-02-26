@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, NgModule, OnInit } from '@angular/core';
 import { Courses } from 'src/app/Models/courses.model';
 import { CourseStorageService } from 'src/app/Shared/course.storage.service';

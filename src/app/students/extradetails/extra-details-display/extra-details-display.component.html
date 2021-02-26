@@ -1,0 +1,173 @@
+<body *ngIf="!viewDetails">
+<button class="btn btn-primary" (click)="goBack()">Back</button>
+<button class="btn btn-primary" (click)="getEachValue()" *ngIf="!hideDetails">BOOK LESSON</button>
+<div *ngIf="hideDetails" style="text-align: center;">
+<h1>{{displayArray.courseName}}</h1>
+<h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;{{displayArray.creator}}</h4>
+<h5><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{displayArray.cityName}},{{displayArray.country}}</h5>
+
+
+<h6>
+    <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{displayArray.duration}}
+    (${{displayArray.price}})
+</h6>
+<form (ngSubmit)="addInfo()" [formGroup]="InfoForm" >
+
+    <!-- <div class="form-group duration">
+    <h2>Durations</h2>
+        <input type="radio"
+         id="price" 
+         value="30 minutes"
+         formControlName="duration"
+         >&nbsp;30 mins&nbsp;
+        <input type="radio" 
+        id="price" 
+         value="45 minutes"
+         formControlName="duration" 
+         >&nbsp;45 mins&nbsp;
+        <input type="radio"
+         id="price"
+           value="60 minutes"
+           formControlName="duration"
+           >&nbsp;60 mins&nbsp;
+           <br>
+          </div> -->
+          
+         
+    <h5 *ngIf="displayArray.freeTrial">
+        <div class="form-group">
+            <div><h5>Free Trial</h5> <label class="switch">
+                <input type="checkbox"
+                formControlName="freeTrial"
+                >
+                <span class="slider"></span>
+              </label></div>
+            
+        </div>
+    
+    </h5>
+<div *ngIf="displayArray.recurring" >
+    <div class="form-group">
+        <div><h5>Single/Recurring</h5> <label class="switch">
+            <input type="checkbox"
+            formControlName="recurring"
+            >
+            <span class="slider"></span>
+          </label></div>
+        
+    </div>
+    <div *ngIf="this.InfoForm.get('recurring').value">
+    <!-- <div formArrayName="days">
+        <button class="btn btn-primary" (click)="addDays()" type="button">
+          Add Days
+            </button>
+            <div class="form-group"
+            *ngFor="let day of InfoForm.get('days').controls; let i = index">
+    <input type="text" class="form-control"
+    [formControlName]="i">
+            </div>
+          </div> -->
+
+          <div formArrayName="days">
+            <div class="form-group">
+              <button class="btn btn-primary"type="button"  id="btn1"value="monday" (click)="addDays('Monday', 'btn1')" > Monday</button>
+              <button class="btn btn-primary"type="button"   id="btn2"value="tuesday" (click)="addDays('Tuesday', 'btn2')" > Tuesday</button>
+              <button class="btn btn-primary"type="button"  id="btn3" value="tuesday" (click)="addDays('Wednesday', 'btn3')" > Wednesday</button>
+              <button class="btn btn-primary"type="button"  id="btn4" value="monday" (click)="addDays('Thusday', 'btn4')" > Thusday</button>
+              <button class="btn btn-primary"type="button"  id="btn5" value="monday" (click)="addDays('Friday', 'btn5')" > Friday</button>
+              <button class="btn btn-primary"type="button"  id="btn6" value="monday" (click)="addDays('Saturday', 'btn6')" > Saturday</button>
+              <button class="btn btn-primary"type="button"  id="btn7" value="monday" (click)="addDays('Sunday', 'btn7')" > Sunday</button>
+            </div>
+            
+          </div>
+
+          <label for="lesson">No of Lessons :- </label>
+          <input type="number" 
+          placeholder="Number Of Lessons" 
+          class="form-control"
+           id="lesson"
+           formControlName="noOfLesson"
+           >
+        </div>
+        <div class="form-group">
+          <label for="date">Starting Date :- </label>
+             <input type="date" class="input"
+             placeholder="Starting Date" 
+             class="form-control"
+              id="date"
+              formControlName="startDate"
+              >
+         </div>
+         <label for="time">Starting Time :- </label>
+           <input type="time" 
+           placeholder=" Starting time" 
+           class="form-control"
+            id="time"
+            formControlName="startTime"
+            ><br> 
+     
+</div>
+
+<div *ngIf="!displayArray.recurring" >
+    <div class="form-group">
+        <label for="date">Starting Date :- </label>
+           <input type="date" class="input"
+           placeholder="Starting Date" 
+           class="form-control"
+            id="date"
+            formControlName="startDate"
+            >
+       </div>
+       <label for="time">Starting Time :- </label>
+         <input type="time" 
+         placeholder=" Starting time" 
+         class="form-control"
+          id="time"
+          formControlName="startTime"
+          ><br>  
+</div>
+<button class="btn btn-success" type="submit">Show details</button>
+</form>
+</div>
+</body>
+<div *ngIf="viewDetails">
+  <h1>Booked Course Details</h1>
+  <h4><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;{{displayArray.creator}}</h4>
+  <h5><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{{displayArray.cityName}},{{displayArray.country}}</h5>
+  <h6>
+    <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{displayArray.duration}}
+    (${{displayArray.price}})
+</h6>
+<div *ngIf="InfoForm.value.freeTrial">
+<div class="alert alert-success">
+<h3>Free Trial is Enabled !!</h3>
+</div>
+</div>
+<div *ngIf="!InfoForm.value.freeTrial">
+  <div class="alert alert-danger">
+  <h3>Free Trial is Disabled !!</h3>
+  </div>
+  </div>
+
+  <div *ngIf="InfoForm.value.recurring">
+    <div class="alert alert-success">
+    <h3>Recurring is Enabled !!</h3>
+    <h4>Days Selected</h4>
+<div *ngFor="let day of InfoForm.value.days; let i = index">
+      <h6>{{day}}</h6>
+</div>
+<h5>Number of lesson :- {{InfoForm.value.noOfLesson}}</h5>
+<h5>Starting Date :- {{InfoForm.value.startDate | date}}</h5>
+<h5>Starting Time :- {{InfoForm.value.startTime}}</h5>
+    </div>
+    </div>
+    <div *ngIf="!InfoForm.value.recurring">
+      <div class="alert alert-danger">
+      <h3>Recurring is Disabled !!</h3>
+  <h5>Starting Date :- {{InfoForm.value.startDate | date}}</h5>
+  <h5>Starting Time :- {{InfoForm.value.startTime}}</h5>
+      </div>
+      </div>
+
+</div>
+

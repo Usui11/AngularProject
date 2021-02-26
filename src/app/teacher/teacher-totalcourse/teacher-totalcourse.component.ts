@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 import { Courses } from 'src/app/Models/courses.model';
-import { CourseStorageService } from 'src/app/Shared/course.storage.service';
 import { TeacherCourseService } from '../TeacherServices/teacher.course.service';
 
 @Component({

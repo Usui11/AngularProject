@@ -5,12 +5,14 @@ import { Courses } from "src/app/Models/courses.model";
 @Injectable({providedIn:'root'})
 export class TeacherCourseService{
    name:string;
-    imgpath:string;
+    imgath:string;
      description:string;
       dat:Date;
       cost:number;
+     
+
       courseChanged = new Subject<Courses[]>();
-   // courses:Courses[]=[];
+   // courses:Courses[]=[];   
   public courses = [
        {
      name :'HTML',

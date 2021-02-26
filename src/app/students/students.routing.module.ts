@@ -6,6 +6,8 @@ import { StudentMycourseComponent } from "./student-mycourse/student-mycourse.co
 import { StudentsComponent } from "./students.component";
 import { StudentCoursedetailsComponent } from './student-allcourse/student-coursedetails/student-coursedetails.component';
 import { AuthGuard } from "../Login/auth.guard.service";
+import { ExtraDetailsComponent } from "./extradetails/extra-details/extra-details.component";
+import { ExtraDetailsDisplayComponent } from "./extradetails/extra-details-display/extra-details-display.component";
 
 
 const studentRoute: Routes = [
@@ -15,7 +17,10 @@ const studentRoute: Routes = [
         ]},
         { path :'student-my-course', component : StudentMycourseComponent},
         { path :'student-homepage', component : StudentHomepageComponent },
-        
+        {path: 'extra-details', component: ExtraDetailsComponent, children:[
+            {path: 'extra-details-display', component: ExtraDetailsDisplayComponent}
+        ]},
+         
     
 ]}
 ]

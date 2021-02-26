@@ -92,6 +92,6 @@ private tokenexpirationtimer : any;
    autoLoggedout(expire: number){
     this.tokenexpirationtimer = setTimeout(()=>{
       this.Logout();
-     },expire);
+     },200000);
    }
 }

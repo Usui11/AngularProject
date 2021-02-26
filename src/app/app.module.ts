@@ -12,12 +12,16 @@ import { StudentModule } from "./students/students.module";
 import { TeacherModule } from "./teacher/teacher.module";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DropdowndirDirective,
     LoadingSpinnerComponent,
+    
+    
+    
   
   ],
   imports: [
@@ -33,4 +37,6 @@ import { TeacherModule } from "./teacher/teacher.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

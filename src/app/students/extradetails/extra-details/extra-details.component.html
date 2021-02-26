@@ -1,0 +1,25 @@
+<body>
+    <div *ngIf="!displayDetails">
+            <div *ngFor="let value of (extraDetails$ | async)?.extraInformations; let i = index">
+                <div class="form-group">
+                    <h1 routerLink="extra-details-display" (click)="viewDetails(i)"
+                    class="form-control" style="cursor: pointer; font-size: 30px; font-weight: 900;">
+                    {{i+1}}.{{value.courseName}}
+                </h1> 
+
+                    <p> <i class="fa fa-user" aria-hidden="true"></i>
+                          {{value.creator}}</p>
+                          <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+                              {{value.cityName}},{{value.country}}
+                          </p>
+            </div>
+                
+             </div>
+    </div>
+
+
+     <div *ngIf="displayDetails">
+         <router-outlet></router-outlet>
+     </div>
+     
+</body>

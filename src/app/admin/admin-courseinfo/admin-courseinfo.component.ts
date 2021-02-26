@@ -11,11 +11,10 @@ import { AdminService } from '../admin.service';
 })
 export class AdminCourseinfoComponent implements OnInit {
 course:Courses[];
-  constructor(private courseStorageSerive: CourseStorageService,
-     ) { }
+  constructor(private courseStorageSerive: CourseStorageService) { }
 
   ngOnInit() {
-  // Fetching list of courses from that database
+  // Fetching list of courses from database
   this.courseStorageSerive.fetchCourse().subscribe(course =>{
     this.course = course;
 });

@@ -1,0 +1,171 @@
+<body>
+<form (ngSubmit)="addExtraInfo()" [formGroup]="extraInfoForm" *ngIf="!viewDetails">
+  <h5>Durations Option and pricing</h5>
+  <div class="form-group">
+    <label for="cityname">Course Name :- </label>
+       <input type="text"  
+       class="form-control"
+        id="courseName"
+        formControlName="courseName"
+        >
+   </div>
+
+<div class="form-group">
+    
+<input type="radio"
+ id="price" 
+ 
+ value="30 minutes"
+ formControlName="duration"
+ >&nbsp;30 mins&nbsp;
+ 
+
+<input type="radio" 
+id="price" 
+ value="45 minutes"
+ formControlName="duration" 
+ >&nbsp;45 mins&nbsp;
+
+
+<input type="radio"
+ id="price"
+  
+   value="60 minutes"
+   formControlName="duration"
+   >&nbsp;60 mins&nbsp;
+   
+
+<input type="radio"
+ id="price" 
+  value="90 minutes"
+  formControlName="duration"
+  >&nbsp;90 mins
+  <br>
+  <div class="form-group">
+      <input class="form-control" 
+      type = "number" 
+      id = "price" 
+      placeholder = "Price"
+      formControlName = "price"
+      style="width: 100px;"
+      >
+    
+  </div>
+</div>
+
+<div class="form-group">
+    <div><h5>Offer Free Trial</h5> <label class="switch">
+        <input type="checkbox"
+        formControlName="freeTrial"
+        >
+        <span class="slider"></span>
+      </label></div>
+    
+</div>
+<div class="form-group">
+    <label for="creator"><h6>Name of the Creator  :- </h6></label>
+    <input type="text" 
+    class="form-control"
+    id="creater" name="creator"
+    formControlName="creator"
+    >
+    
+</div>
+<div class="form-group">
+ <label for="cityname">City Name :- </label>
+    <input type="text" 
+    placeholder="City Name" 
+    class="form-control"
+     id="cityname"
+     formControlName="cityName"
+     >
+</div>
+<div class="form-group">
+    <label for="Country">Country</label>
+    <select class="form-control" 
+    id="Country"
+    formControlName="country"
+    >
+      <option>Bhutan</option>
+      <option>India</option>
+      <option>Thailand</option>
+      <option>Japan</option>
+      <option>Nepal</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="cityname">Teacher ID :- </label>
+       <input type="number" 
+       placeholder="teacherId" 
+       class="form-control"
+        id="teacherid"
+        formControlName="teacherId"
+        >
+   </div>
+  
+   <div class="form-group">
+    <div><h5>Single/Recurring</h5> <label class="switch">
+        <input type="checkbox"
+        formControlName="recurring"
+        >
+        <span class="slider"></span>
+      </label></div>
+    
+</div>
+<div class="form-group">
+  <input class="form-control btn-success" type="submit" value="Save" >
+</div>
+</form>
+<div *ngIf="viewDetails">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="viewDetails">
+<div class="form-group">
+<h1>{{extraInfoForm.value.courseName}}</h1>
+</div>
+
+<div class="form-group">
+  <h6>{{extraInfoForm.value.duration}} -> Price :- {{extraInfoForm.value.price}}</h6>
+  </div>
+
+  <div class="form-group">
+   <div *ngIf="extraInfoForm.value.freeTrial">
+           <div class="alert alert-success">
+      <h6>Free Trial is Enabled!!</h6>
+           </div>
+   </div>
+   <div *ngIf="!extraInfoForm.value.freeTrial">
+    <div class="alert alert-danger">
+<h6>Free Trial is Disabled!!</h6>
+    </div>
+</div>
+    </div>
+
+    <div class="form-group">
+      <h2>Creator Name:- {{extraInfoForm.value.creator}}</h2>
+      </div>
+
+      
+    <div class="form-group">
+      <h6>City Name:- {{extraInfoForm.value.cityName}}</h6>
+      </div>
+      
+    <div class="form-group">
+      <h6>Country Name:- {{extraInfoForm.value.country}}</h6>
+      </div>
+
+      <div class="form-group">
+        <div *ngIf="extraInfoForm.value.recurring">
+                <div class="alert alert-success">
+           <h6>Recurring is Enabled!!</h6>
+                </div>
+        </div>
+        <div *ngIf="!extraInfoForm.value.recurring">
+         <div class="alert alert-danger">
+     <h6>Recurring is Disabled!!</h6>
+         </div>
+     </div>
+         </div>
+</div>
+</body>
