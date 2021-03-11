@@ -1,6 +1,7 @@
 
 import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeacherCourseService } from '../TeacherServices/teacher.course.service';
 
 @Component({
@@ -17,7 +18,9 @@ export class TeacherAddcourseComponent implements OnInit {
   date:Date;
   cost:number;
    addcourseform : FormGroup;
-  constructor(private teachercourseservice: TeacherCourseService) { }
+  constructor(private teachercourseservice: TeacherCourseService,
+     private router: Router,
+     private route : ActivatedRoute) { }
   newcourseadded(){
 this.name = this.addcourseform.value.name;
 this.link = this.addcourseform.value.imgpath;
@@ -34,8 +37,11 @@ this.cost = this.addcourseform.value.coursecost;
       'imgpath' : new FormControl(null, Validators.required),
       'description' : new FormControl(null, Validators.required) ,
       'date': new FormControl(null, Validators.required),
-      'coursecost' : new FormControl(null, Validators.required)
+      'coursecost' : new FormControl(null, Validators.required),
+     
     })
   }
   
+  
+
 }

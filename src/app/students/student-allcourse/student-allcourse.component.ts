@@ -17,7 +17,7 @@ export class StudentAllcourseComponent implements OnInit {
   }
  ngOnInit() {
    this.course = this.teachercourseService.courses; 
-   //It is called inorder there in any changes are made in the data  
+   //It is called whenever there in any changes are made in the data  
    this.teachercourseService.courseChanged.subscribe((courses:Courses[])=>{
    this.course = courses;
 });

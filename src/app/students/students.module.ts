@@ -3,6 +3,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { ExtraDetailsDisplayComponent } from "./extradetails/extra-details-display/extra-details-display.component";
+import { ExtraDetailsComponent } from "./extradetails/extra-details/extra-details.component";
 import { StudentAllcourseComponent } from "./student-allcourse/student-allcourse.component";
 import { StudentCoursedetailsComponent } from "./student-allcourse/student-coursedetails/student-coursedetails.component";
 import { StudentHeaderComponent } from "./student-header/student-header.component";
@@ -19,6 +21,9 @@ import { studentRoutingmodule } from "./students.routing.module";
     StudentAllcourseComponent,
     StudentHomepageComponent,
     StudentCoursedetailsComponent,
+    ExtraDetailsComponent,
+    ExtraDetailsDisplayComponent,
+  
   ],
   imports:[
     CommonModule,

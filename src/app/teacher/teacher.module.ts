@@ -10,6 +10,9 @@ import { TeacherCoursedetailsComponent } from "./teacher-totalcourse/teacher-cou
 import { TeacherTotalcourseComponent } from "./teacher-totalcourse/teacher-totalcourse.component";
 import { TeacherComponent } from "./teacher.component";
 import { TeacherRoutingModule } from "./Teacher.routing.module";
+import { ExtraInfoComponent } from './extrainfo/Components/extra-info/extra-info.component';
+
+
 
 @NgModule({
    declarations:[
@@ -18,7 +21,11 @@ import { TeacherRoutingModule } from "./Teacher.routing.module";
     TeacherCoursedetailsComponent,
     TeacherTotalcourseComponent,
     TeacherHomepageComponent,
-    TeacherHeaderComponent
+    TeacherHeaderComponent,
+    ExtraInfoComponent,
+    
+    
+   
    ], 
    imports:[
     CommonModule,

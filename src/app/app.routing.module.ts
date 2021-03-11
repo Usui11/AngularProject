@@ -15,7 +15,7 @@ const appRoutes : Routes = [
     {path: 'admin', loadChildren:'./admin/admin.module#AdminModule'},
     {path: 'teacher', loadChildren:'./teacher/teacher.module#TeacherModule'},
     {path: 'student', loadChildren:'./students/students.module#StudentModule'},
-  {path:'**', redirectTo:'/login'}
+//   {path:'**', redirectTo:'/login'}
   ];
 @NgModule({
     imports:[

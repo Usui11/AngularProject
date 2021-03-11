@@ -8,11 +8,11 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./approval.component.css']
 })
 export class ApprovalComponent implements OnInit {
-    email:string;
-    password:string;
+    email: string;
+    password: string;
     
   constructor(private adminService: AdminService, private authService: AuthService) { }
-  info:{email: string, idToken: string}[] = [];
+  info: {email: string, idToken: string}[] = [];
   ngOnInit() {
     this.email = this.adminService.email;
     this.info = this.adminService.info;
